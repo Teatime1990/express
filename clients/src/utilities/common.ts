@@ -62,7 +62,7 @@ export type MovieIDAndTitle = {
 }
 
 export function movieURL(url: string): string {
-    return url != 'N/A' ? url : imgPlaceholder;
+    return url !== 'N/A' ? url : imgPlaceholder;
 }
 
 export enum HANDLEPAGE {

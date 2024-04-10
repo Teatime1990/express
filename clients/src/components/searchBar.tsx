@@ -50,17 +50,15 @@ const SearchBarContainer = styled.div`
 type SearchBarProps = {
     searchText: string;
     searchTextOnChange: (text: string) => void;
-    setPage: (page: number) => void;
 }
 
 type Props = SearchYearRangeProps & SearchBarProps & SearchTypeProps;
 
 
-const SearchBar: FC<Props> = ({ searchText, searchTextOnChange, searchYears, setSearchYears, searchType, searchTypeOnChange, setPage }: Props) => {
+const SearchBar: FC<Props> = ({ searchText, searchTextOnChange, searchYears, setSearchYears, searchType, searchTypeOnChange }: Props) => {
 
     const onSearchTextChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         searchTextOnChange(e.target.value);
-        setPage(1);
     };
 
     return (
@@ -77,7 +75,7 @@ const SearchBar: FC<Props> = ({ searchText, searchTextOnChange, searchYears, set
                     />
                 </div>
                 <ScrollbarYearRange searchYears={searchYears} setSearchYears={setSearchYears} />
-                <SearchRadio searchType={searchType} searchTypeOnChange={searchTypeOnChange} setPage={setPage} />
+                <SearchRadio searchType={searchType} searchTypeOnChange={searchTypeOnChange} />
             </div>
             
         </SearchBarContainer>
