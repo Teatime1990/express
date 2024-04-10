@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
-import mongoose, { mongo } from 'mongoose';
+import mongoose from 'mongoose';
 import router from './routers';
 
 const PORT = process.env.PORT || 8000;
