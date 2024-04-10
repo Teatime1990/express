@@ -11,7 +11,7 @@ import Skeleton from 'react-loading-skeleton';
 const SearchContentsContainer = styled.div`
     .movies-list-container {
         display: flex;
-        height: calc(100vh - 120px);
+        height: calc(100vh - 100px);
         overflow-y: hidden;
 
         .movies-list {
@@ -20,7 +20,7 @@ const SearchContentsContainer = styled.div`
             white-space: nowrap;
             height: calc(-100px + 100vh);
             position: relative;
-            box-sizing: inherit;
+            box-sizing: border-box;
 
             &::-webkit-scrollbar {
                 width: 14px;
@@ -98,7 +98,7 @@ const SearchContents: FC<SearchContentsProps> = ({ searchText, searchYears, sear
             const result: Array<Search> = res.data.Search;
             setItems((prevItems) => [...prevItems, ...result]);
     
-            result.length > 0 ? setHasMore(true) : setHasMore(false);
+            result?.length > 0 ? setHasMore(true) : setHasMore(false);
           })
           .catch((err) => console.log(err));
         setIndex((prevIndex) => prevIndex + 1);
