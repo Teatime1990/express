@@ -11,7 +11,7 @@ cd to the client folder
 npm start
 ```
 
-### Run Server side (http://localhost:3000)
+### Run Server side (http://localhost:8000)
 
 cd to the server folder
 
